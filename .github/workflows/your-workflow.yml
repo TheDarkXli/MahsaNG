@@ -1,0 +1,13 @@
+on:
+  repository_dispatch:
+    types: [custom-ci-trigger]  # You can change this to any name you want
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Run your script
+        run: echo "Triggered by external webhook!"
